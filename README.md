@@ -1,7 +1,10 @@
 # Node.js Study
 
-CMD Back-end Study
-Period: 2021.06. ~ 
+### CMD Back-end Study
+
+- Period: 2021.06. ~ 
+
+---
 
 ### Week-1
 Learn how to use JavaScript to control Node.js using Node.JavaScript to create a web application that dynamically generates HTML code
