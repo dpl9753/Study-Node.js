@@ -80,7 +80,7 @@ exports.update = function(request, response){
                         border:1px solid black;
                     }
                 </style>
-                <form action="/author/updqte_process" method="post">
+                <form action="/author/update_process" method="post">
                     <p>
                         <input type="hidden" name="id" value="${queryData.id}">
                     </p>
@@ -103,4 +103,46 @@ exports.update = function(request, response){
             
         });
     });
+}
+
+exports.update_process = function(request, response){
+    var body = '';
+      request.on('data', function(data){
+          body = body + data;
+      });
+      request.on('end', function(){
+          var post = qs.parse(body);
+          db.query(`
+            UPDATE author SET name=?, profile=? WHERE id=?`, 
+            [post.name, post.profile, post.id], 
+            function(error, result){
+              if(error) {
+                throw error;
+              }
+              response.writeHead(302, {Location: `/author`});
+              response.end();
+            } 
+          )
+      });
+}
+
+exports.delete_process = function(request, response){
+    var body = '';
+      request.on('data', function(data){
+          body = body + data;
+      });
+      request.on('end', function(){
+          var post = qs.parse(body);
+          db.query(`
+            DELETE FROM author WHERE id=?`, 
+            [post.id], 
+            function(error, result){
+              if(error) {
+                throw error;
+              }
+              response.writeHead(302, {Location: `/author`});
+              response.end();
+            } 
+          )
+      });
 }
