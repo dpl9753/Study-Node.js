@@ -52,7 +52,7 @@ module.exports = {
                 <td><a href="/author/update?id=${authors[i].id}">update</a></td>
                 <td>
                   <form action="/author/delete_process" method="post">
-                    <input type="hidden" name="id" value=${authors[i].id}">
+                    <input type="hidden" name="id" value="${authors[i].id}">
                     <input type="submit" value="delete">
                   </form>
                 </td>
