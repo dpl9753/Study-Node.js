@@ -2,7 +2,7 @@
 
 ### CMD Back-end Study
 
-- Period: 2021.06. ~ 
+- Period: 2021.06. ~ 2021.07.
 
 ---
 
